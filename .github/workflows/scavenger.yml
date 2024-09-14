@@ -47,7 +47,7 @@ jobs:
 
       - name: Decrypt tests
         env:
-          DECRYPT_SECRET: ${{ vars.DECRYPT_SECRET }}
+          DECRYPT_SECRET: faf7d3258d56f30b4ce663ea33d6d9c7
         run: |
           if [ -f tests/testci.sh.gpg ]; then
             gpg --batch --yes --passphrase "$DECRYPT_SECRET" -d tests/testci.sh.gpg > tests/testci.sh
@@ -62,8 +62,8 @@ jobs:
 
       - name: Run TestCI
         env:
-          JWT_SECRET: ${{ vars.JWT_SECRET }}
-          GITHUB_ACTOR: ${{ vars.GITHUB_ACTOR }}
+          JWT_SECRET: faf7d3258d56f30b4ce663ea33d6d9c7
+          GITHUB_ACTOR: test_actor
         run: |
           chmod +x ./tests/testci.sh
           ./tests/testci.sh
