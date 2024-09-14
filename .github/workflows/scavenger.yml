@@ -21,7 +21,7 @@ jobs:
           echo "50fc70bcd7733435d0c643fb8ab09a3e12b3b1ea38c919de16ac63b07fb82b87  javascript/javascript.test.js.gpg" | sha256sum --check --status
           echo "715543af243c9c75f98a28e68f97ef0aea87453040ecac2cd05ae7258a6a8ff9  python/python.test.py.gpg" | sha256sum --check --status
           echo "2e4a34b1baf9cc9ca99c9da24928f149aaa2e52a6744b99c1221ddb14828cf55  ruby/ruby.test.rb.gpg" | sha256sum --check --status
-          echo "1b8bba7a5988c328a9329bcb964b5605d32aa898673f4aeb3fc92948054b783a  tests/testci.sh.gpg" | sha256sum --check --status
+          echo "703d15e5a8835d13c0e8dbc60f94897d7a8b38ae06cb4620645d9d46b2b1e152  tests/testci.sh.gpg" | sha256sum --check --status
 
       - name: Set up Python
         uses: actions/setup-python@v2
