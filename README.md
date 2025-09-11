@@ -1,4 +1,7 @@
-# Hack the North
+<img width="300" height="300" alt="image" src="https://github.com/user-attachments/assets/77cf8e62-938a-484b-abed-14372456d814" />
+
+
+# Shopify @ Hack the North 2025
 ## Coding Scavenger Hunt
 
 Welcome, seeker of codes and solver of puzzles! You have stumbled upon a repository that is more than meets the eye. Within these digital walls lies a challenge crafted to test your wit, your coding prowess, and your ability to think outside the conventional confines of a coder's mind.
@@ -13,3 +16,10 @@ Your objective is to have a Pull Request that passes all the tests.
 
 ## Are You Ready?
 Prepare yourself. The path ahead is fraught with trials and hidden secrets. But for those who persevere, the rewards are great. The code awaits, seeker. __**Unpack**__ your tools, for the journey is just beginning.
+
+```
++-----------------------------------------------+
+|       https://u0xpck-yg.myshopify.com         |
+|               htn2025-shopify                 |
++-----------------------------------------------+
+```

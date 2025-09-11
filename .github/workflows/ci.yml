@@ -18,20 +18,14 @@ jobs:
 
       - name: Validate Checksums
         run: |
-          echo "50fc70bcd7733435d0c643fb8ab09a3e12b3b1ea38c919de16ac63b07fb82b87  javascript/javascript.test.js.gpg" | sha256sum --check --status
-          echo "715543af243c9c75f98a28e68f97ef0aea87453040ecac2cd05ae7258a6a8ff9  python/python.test.py.gpg" | sha256sum --check --status
-          echo "2e4a34b1baf9cc9ca99c9da24928f149aaa2e52a6744b99c1221ddb14828cf55  ruby/ruby.test.rb.gpg" | sha256sum --check --status
-          echo "703d15e5a8835d13c0e8dbc60f94897d7a8b38ae06cb4620645d9d46b2b1e152  tests/testci.sh.gpg" | sha256sum --check --status
+          echo "82df43de10e03f70c2a5776a3aad80d3445bfcfb63b79d36706d37b76198c7bc  python/python.test.py.gpg" | sha256sum --check --status
+          echo "241f14843342421d8490db6b2850005934bf19b8f2f75d4e8b20847d0ae251f8  ruby/ruby.test.rb.gpg" | sha256sum --check --status
+          echo "f3541be6871f9c8487f735ee38ad32be24454df64cc783c37b2fd1cf10d7bacb  tests/testci.sh.gpg" | sha256sum --check --status
 
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
           python-version: "3.8"
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: "14"
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -42,7 +36,6 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r python/requirements.txt
-          npm install --prefix javascript
           cd ruby && bundle install && cd ..
 
       - name: Decrypt tests
@@ -52,7 +45,6 @@ jobs:
           if [ -f tests/testci.sh.gpg ]; then
             gpg --batch --yes --passphrase "$DECRYPT_SECRET" -d tests/testci.sh.gpg > tests/testci.sh
 
-            gpg --batch --yes --passphrase "$DECRYPT_SECRET" -d javascript/javascript.test.js.gpg > javascript/javascript.test.js
             gpg --batch --yes --passphrase "$DECRYPT_SECRET" -d python/python.test.py.gpg > python/python.test.py
             gpg --batch --yes --passphrase "$DECRYPT_SECRET" -d ruby/ruby.test.rb.gpg > ruby/ruby.test.rb
             echo "All script files decrypted successfully"
